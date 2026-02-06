@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стаков Minecraft</title>
+    <link rel="shortcut icon" href="../icons/calcIco.png">
+    <link rel="stylesheet" href="blockCalc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="center-container">
+        <div class="container">
+            <div class="calculator-section">
+                <header>
+                    <h1>Калькулятор стаков</h1>
+                    <p class="subtitle">Расчет предметов на стаки (64 шт.) с поддержкой выражений</p>
+                </header>
+                <div class="back-container">
+                    <a href="../index.html" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Назад к выбору калькуляторов
+                    </a>
+                </div>
+                <div class="calculator">
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="quantity">
+                                Количество или выражение:
+                                <span class="info-icon" title="Поддерживаются: +, -, *, /, скобки. Примеры: 120, 4*64, 2*(64+32), 120-64">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                            </label>
+                            <input type="text" id="quantity" placeholder="Например: 120, 4*64, 2*(64+32)" value="64">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="itemName">Название предмета:</label>
+                            <input type="text" id="itemName" placeholder="Например: камень, железо, кварц" value="железо">
+                        </div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button id="addItemBtn" class="add-btn">
+                            <i class="fas fa-plus"></i> Добавить предмет
+                        </button>
+                        <div class="history-buttons">
+                            <button id="undoBtn" class="history-btn" title="Отменить (Ctrl+Z)">
+                                <i class="fas fa-undo"></i>
+                            </button>
+                            <button id="redoBtn" class="history-btn" title="Повторить (Ctrl+Y)">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="stats" id="stats">
+                        <div class="stat-card">
+                            <div class="stat-value" id="statTotalItems">0</div>
+                            <div class="stat-label">Всего предметов</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="statUniqueItems">0</div>
+                            <div class="stat-label">Уникальных видов</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="statTotalStacks">0</div>
+                            <div class="stat-label">Всего стаков</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="statListsCount">0</div>
+                            <div class="stat-label">Списков</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lists-section">
+                <div class="lists-header-container">
+                    <div class="lists-header">
+                        <div class="lists-header-left">
+                            <div class="lists-title">Списки предметов</div>
+                            <div class="lists-subtitle">Выберите список(и) для добавления предметов</div>
+                        </div>
+                        <button id="addListBtn" class="add-list-btn">
+                            <i class="fas fa-plus"></i> Новый список
+                        </button>
+                    </div>
+                    <div class="header-line"></div>
+                </div>
+                
+                <div class="selected-lists-info" id="selectedListsInfo">
+                    Не выбрано ни одного списка. Предметы будут добавлены в новый автоматический список.
+                </div>
+                
+                <div class="lists-container" id="listsContainer">
+                    <div class="empty-lists" id="emptyListsMessage">
+                        <i class="fas fa-layer-group fa-2x" style="margin-bottom: 15px; color: #4a4a7a;"></i>
+                        <p>Списки не созданы</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">Создайте список с помощью кнопки "Новый список"</p>
+                    </div>
+                </div>
+                
+                <div class="lists-actions">
+                    <button id="deleteSelectedListsBtn" class="delete-btn">
+                        <i class="fas fa-trash"></i> Удалить выбранные
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="blockCalc.js"></script>
+</body>
+</html>

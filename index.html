@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Калькуляторы</title>
+    <link rel="shortcut icon" href="icons/calcIco.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="main-content">
+            <header class="main-header">
+                <div class="logo">
+                    <i class="fas fa-calculator"></i>
+                    <h1>Minecraft Калькуляторы</h1>
+                </div>
+                <p class="subtitle">Точные расчеты для вашего приключения</p>
+            </header>
+            
+            <div class="calculators-grid">
+                <!-- Калькулятор блоков -->
+                <div class="calculator-card purple-theme">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h2>Калькулятор стаков</h2>
+                    </div>
+                    <p class="card-description">
+                        Расчет предметов на стаки (64 шт.) с поддержкой выражений. 
+                        Автоматическое объединение предметов.
+                    </p>
+                    <div class="card-features">
+                        <span><i class="fas fa-check-circle"></i> Поддержка выражений</span>
+                        <span><i class="fas fa-check-circle"></i> Несколько списков</span>
+                        <span><i class="fas fa-check-circle"></i> История действий</span>
+                    </div>
+                    <a href="blocks-calculator/blockCalc.html" class="card-btn">
+                        <span>Открыть калькулятор</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Калькулятор координат -->
+                <div class="calculator-card amber-theme">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h2>Калькулятор координат</h2>
+                    </div>
+                    <p class="card-description">
+                        Конвертация координат между обычным миром и адом. 
+                        Автоматический расчет по соотношению 1:8.
+                    </p>
+                    <div class="card-features">
+                        <span><i class="fas fa-check-circle"></i> Двусторонняя конвертация</span>
+                        <span><i class="fas fa-check-circle"></i> Коэффициент 1:8</span>
+                        <span><i class="fas fa-check-circle"></i> Быстрые координаты</span>
+                    </div>
+                    <a href="coords-calculator/coordsCalc.html" class="card-btn">
+                        <span>Открыть калькулятор</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Калькулятор расстояний -->
+                <div class="calculator-card emerald-theme">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-ruler-combined"></i>
+                        </div>
+                        <h2>Калькулятор расстояний</h2>
+                    </div>
+                    <p class="card-description">
+                        Расчет расстояний между двумя точками с конвертацией в ад. 
+                        Автоматический пересчет координат.
+                    </p>
+                    <div class="card-features">
+                        <span><i class="fas fa-check-circle"></i> Дистанция между точками</span>
+                        <span><i class="fas fa-check-circle"></i> Конвертация мир-ад</span>
+                        <span><i class="fas fa-check-circle"></i> Интерактивный расчет</span>
+                    </div>
+                    <a href="distance-calculator/distCalc.html" class="card-btn">
+                        <span>Открыть калькулятор</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <footer class="main-footer">
+                <div class="footer-content">
+                    <p class="copyright">Minecraft Калькуляторы © 2026</p>
+                    <div class="footer-links">
+                        <a href="blocks-calculator/index.html">Калькулятор стаков</a>
+                        <a href="coords-calculator/index.html">Калькулятор координат</a>
+                        <a href="distance-calculator/index.html">Калькулятор расстояний</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

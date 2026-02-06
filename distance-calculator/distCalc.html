@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор расстояний Minecraft</title>
+    <link rel="shortcut icon" href="../icons/calcIco.png">
+    <link rel="stylesheet" href="distCalc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="center-container">
+        <div class="container">
+            <div class="calculator-section">
+                <div class="header-controls">
+                    <div class="back-container">
+                        <a href="../index.html" class="back-btn">
+                            <i class="fas fa-arrow-left"></i> Назад к выбору калькуляторов
+                        </a>
+                    </div>
+                    
+                    <div class="format-toggle-container">
+                        <div class="toggle-wrapper">
+                            <i class="fas fa-expand-alt"></i>
+                            <span class="toggle-label">Полные числа</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="shortenNumbers">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <header>
+                    <h1><i class="fas fa-ruler-combined"></i> Калькулятор расстояний Minecraft</h1>
+                    <p class="subtitle">Расчет расстояний между двумя точками с конвертацией в ад</p>
+                </header>
+                
+                <div class="calculator">
+                    <div class="points-container">
+                        <!-- Текущая позиция -->
+                        <div class="point-card" id="startPoint">
+                            <div class="point-header">
+                                <div class="point-icon">
+                                    <i class="fas fa-map-marker"></i>
+                                </div>
+                                <div class="point-title">
+                                    <h2>Текущая позиция</h2>
+                                    <p>Ваше начальное местоположение</p>
+                                </div>
+                            </div>
+                            
+                            <div class="point-sections">
+                                <!-- Обычный мир -->
+                                <div class="point-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-globe-americas"></i>
+                                        <h3>Обычный мир</h3>
+                                    </div>
+                                    <div class="coordinates-input">
+                                        <div class="coord-input-group">
+                                            <label for="startWorldX">
+                                                <i class="fas fa-long-arrow-alt-right"></i> X:
+                                            </label>
+                                            <input type="number" id="startWorldX" placeholder="0" step="1" value="100">
+                                        </div>
+                                        <div class="coord-input-group">
+                                            <label for="startWorldZ">
+                                                <i class="fas fa-long-arrow-alt-up"></i> Z:
+                                            </label>
+                                            <input type="number" id="startWorldZ" placeholder="0" step="1" value="100">
+                                        </div>
+                                    </div>
+                                    <div class="coordinate-result">
+                                        <div class="coord-display">
+                                            <i class="fas fa-map-pin"></i>
+                                            <span>X: <span class="coord-value" id="startWorldXDisplay">100</span></span>
+                                            <span>Z: <span class="coord-value" id="startWorldZDisplay">100</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ад -->
+                                <div class="point-section nether-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-fire"></i>
+                                        <h3>Нижний мир (Ад)</h3>
+                                    </div>
+                                    <div class="coordinates-input">
+                                        <div class="coord-input-group">
+                                            <label for="startNetherX">
+                                                <i class="fas fa-long-arrow-alt-right"></i> X:
+                                            </label>
+                                            <input type="number" id="startNetherX" placeholder="0" step="1" value="12">
+                                        </div>
+                                        <div class="coord-input-group">
+                                            <label for="startNetherZ">
+                                                <i class="fas fa-long-arrow-alt-up"></i> Z:
+                                            </label>
+                                            <input type="number" id="startNetherZ" placeholder="0" step="1" value="12">
+                                        </div>
+                                    </div>
+                                    <div class="coordinate-result">
+                                        <div class="coord-display">
+                                            <i class="fas fa-fire"></i>
+                                            <span>X: <span class="coord-value" id="startNetherXDisplay">12</span></span>
+                                            <span>Z: <span class="coord-value" id="startNetherZDisplay">12</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Конечная позиция -->
+                        <div class="point-card" id="endPoint">
+                            <div class="point-header">
+                                <div class="point-icon">
+                                    <i class="fas fa-flag-checkered"></i>
+                                </div>
+                                <div class="point-title">
+                                    <h2>Конечная цель</h2>
+                                    <p>Место, куда нужно попасть</p>
+                                </div>
+                            </div>
+                            
+                            <div class="point-sections">
+                                <!-- Обычный мир -->
+                                <div class="point-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-globe-americas"></i>
+                                        <h3>Обычный мир</h3>
+                                    </div>
+                                    <div class="coordinates-input">
+                                        <div class="coord-input-group">
+                                            <label for="endWorldX">
+                                                <i class="fas fa-long-arrow-alt-right"></i> X:
+                                            </label>
+                                            <input type="number" id="endWorldX" placeholder="0" step="1" value="500">
+                                        </div>
+                                        <div class="coord-input-group">
+                                            <label for="endWorldZ">
+                                                <i class="fas fa-long-arrow-alt-up"></i> Z:
+                                            </label>
+                                            <input type="number" id="endWorldZ" placeholder="0" step="1" value="500">
+                                        </div>
+                                    </div>
+                                    <div class="coordinate-result">
+                                        <div class="coord-display">
+                                            <i class="fas fa-map-pin"></i>
+                                            <span>X: <span class="coord-value" id="endWorldXDisplay">500</span></span>
+                                            <span>Z: <span class="coord-value" id="endWorldZDisplay">500</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ад -->
+                                <div class="point-section nether-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-fire"></i>
+                                        <h3>Нижний мир (Ад)</h3>
+                                    </div>
+                                    <div class="coordinates-input">
+                                        <div class="coord-input-group">
+                                            <label for="endNetherX">
+                                                <i class="fas fa-long-arrow-alt-right"></i> X:
+                                            </label>
+                                            <input type="number" id="endNetherX" placeholder="0" step="1" value="62">
+                                        </div>
+                                        <div class="coord-input-group">
+                                            <label for="endNetherZ">
+                                                <i class="fas fa-long-arrow-alt-up"></i> Z:
+                                            </label>
+                                            <input type="number" id="endNetherZ" placeholder="0" step="1" value="62">
+                                        </div>
+                                    </div>
+                                    <div class="coordinate-result">
+                                        <div class="coord-display">
+                                            <i class="fas fa-fire"></i>
+                                            <span>X: <span class="coord-value" id="endNetherXDisplay">62</span></span>
+                                            <span>Z: <span class="coord-value" id="endNetherZDisplay">62</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Расстояние (теперь в одной строке с другими блоками) -->
+                        <div class="distance-card" id="distanceResult">
+                            <div class="point-header">
+                                <div class="point-icon">
+                                    <i class="fas fa-ruler"></i>
+                                </div>
+                                <div class="point-title">
+                                    <h2>Расстояние</h2>
+                                    <p>Дистанция между точками</p>
+                                </div>
+                            </div>
+                            
+                            <div class="distance-sections">
+                                <!-- Расстояние в обычном мире -->
+                                <div class="distance-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-globe-americas"></i>
+                                        <h3>В обычном мире</h3>
+                                    </div>
+                                    <div class="distance-result">
+                                        <div class="distance-display">
+                                            <div class="distance-value">
+                                                <i class="fas fa-arrows-alt-h"></i>
+                                                <span>Расстояние:</span>
+                                                <strong id="worldDistance">565.69</strong>
+                                                <span class="distance-unit">блоков</span>
+                                            </div>
+                                            <div class="distance-formula">
+                                                ΔX: <span id="worldDeltaX">400</span> | ΔZ: <span id="worldDeltaZ">400</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Расстояние в аду -->
+                                <div class="distance-section nether-section">
+                                    <div class="section-header">
+                                        <i class="fas fa-fire"></i>
+                                        <h3>В Нижнем мире</h3>
+                                    </div>
+                                    <div class="distance-result">
+                                        <div class="distance-display">
+                                            <div class="distance-value">
+                                                <i class="fas fa-fire"></i>
+                                                <span>Расстояние:</span>
+                                                <strong id="netherDistance">70.71</strong>
+                                                <span class="distance-unit">блоков</span>
+                                            </div>
+                                            <div class="distance-formula">
+                                                ΔX: <span id="netherDeltaX">50</span> | ΔZ: <span id="netherDeltaZ">50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Удаляем блок "Быстрые координаты" -->
+                </div>
+                
+                <!-- Добавляем подсказки внизу -->
+                <div class="info-tips">
+                    <div class="tip">
+                        <i class="fas fa-calculator"></i>
+                        <p><strong>Как работает:</strong> Дистанция рассчитывается по формуле: √((X₂-X₁)² + (Z₂-Z₁)²). Изменение любой координаты автоматически обновляет все расчеты.</p>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-exchange-alt"></i>
+                        <p><strong>Конвертация:</strong> Координаты конвертируются между миром и адом по соотношению 1:8. Изменение в одном мире автоматически обновляет другой.</p>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-keyboard"></i>
+                        <p><strong>Горячие клавиши:</strong> Esc - сброс к значениям по умолчанию, F - переключить формат чисел, Ctrl+R - сброс координат.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="distCalc.js"></script>
+</body>
+</html>

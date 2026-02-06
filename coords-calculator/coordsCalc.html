@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор координат Minecraft</title>
+    <link rel="shortcut icon" href="../icons/calcIco.png">
+    <link rel="stylesheet" href="coordsCalc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="center-container">
+        <div class="container">
+            <div class="calculator-section">
+                <div class="header-controls">
+                    <div class="back-container">
+                        <a href="../index.html" class="back-btn">
+                            <i class="fas fa-arrow-left"></i> Назад к выбору калькуляторов
+                        </a>
+                    </div>
+                    
+                    <div class="format-toggle-container">
+                        <div class="toggle-wrapper">
+                            <i class="fas fa-expand-alt"></i>
+                            <span class="toggle-label">Полные числа</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="shortenNumbers">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <header>
+                    <h1><i class="fas fa-fire"></i> Калькулятор координат Minecraft</h1>
+                    <p class="subtitle">Конвертация координат между миром и адом</p>
+                </header>
+                
+                <div class="calculator">
+                    <div class="converter-container">
+                        <div class="converter-column">
+                            <div class="world-header">
+                                <i class="fas fa-globe-americas"></i>
+                                <h2>Обычный мир</h2>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="overworldX">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                        Координата X:
+                                    </label>
+                                    <input type="number" id="overworldX" placeholder="Например: 100" step="1">
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label for="overworldZ">
+                                        <i class="fas fa-long-arrow-alt-up"></i>
+                                        Координата Z:
+                                    </label>
+                                    <input type="number" id="overworldZ" placeholder="Например: -200" step="1">
+                                </div>
+                            </div>
+                            
+                            <div class="result-box" id="overworldResult">
+                                <div class="result-placeholder">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Введите координаты для расчета</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="converter-middle">
+                            <div class="conversion-direction">
+                                <div class="direction-text" id="directionText">
+                                    <i class="fas fa-globe-americas"></i>
+                                    <div class="direction-arrows">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="direction-label">Мир ↔ Ад</div>
+                            </div>
+                            
+                            <div class="conversion-info">
+                                <p><strong>Коэффициент:</strong> 1:8</p>
+                            </div>
+                        </div>
+                        
+                        <div class="converter-column">
+                            <div class="world-header nether-header">
+                                <i class="fas fa-fire"></i>
+                                <h2>Нижний мир (Ад)</h2>
+                            </div>
+                            <div class="input-group">
+                                <div class="input-field">
+                                    <label for="netherX">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                        Координата X:
+                                    </label>
+                                    <input type="number" id="netherX" placeholder="Например: 12" step="1">
+                                </div>
+                                
+                                <div class="input-field">
+                                    <label for="netherZ">
+                                        <i class="fas fa-long-arrow-alt-up"></i>
+                                        Координата Z:
+                                    </label>
+                                    <input type="number" id="netherZ" placeholder="Например: -25" step="1">
+                                </div>
+                            </div>
+                            
+                            <div class="result-box nether-result" id="netherResult">
+                                <div class="result-placeholder">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>Введите координаты для расчета</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Как это работает?</h3>
+                            <p>В Minecraft 1 блок в Нижнем мире равен 8 блокам в обычном мире.</p>
+                            <p class="formula">Мир → Ад: <strong>Ад = Мир ÷ 8</strong></p>
+                            <p class="formula">Ад → Мир: <strong>Мир = Ад × 8</strong></p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Важно помнить!</h3>
+                            <ul>
+                                <li>Координата Y не меняется при переходе</li>
+                                <li>Порталы должны быть правильно выровнены</li>
+                                <li>Результаты округляются до целых чисел</li>
+                                <li>Игрок появляется в пределах 128 блоков от цели</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card">
+                            <i class="fas fa-calculator"></i>
+                            <h3>Быстрый расчет</h3>
+                            <div class="quick-calc">
+                                <button class="quick-btn" data-world-x="0" data-world-z="0">
+                                    <i class="fas fa-home"></i> 
+                                    <span>Спавн (0, 0)</span>
+                                </button>
+                                <button class="quick-btn" data-world-x="1000" data-world-z="1000">
+                                    <i class="fas fa-map-marker-alt"></i> 
+                                    <span>1000, 1000</span>
+                                </button>
+                                <button class="quick-btn" data-nether-x="0" data-nether-z="0">
+                                    <i class="fas fa-fire"></i> 
+                                    <span>Ад (0, 0)</span>
+                                </button>
+                                <button class="quick-btn" data-nether-x="125" data-nether-z="125">
+                                    <i class="fas fa-fire"></i> 
+                                    <span>Ад (125, 125)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="coordsCalc.js"></script>
+</body>
+</html>
